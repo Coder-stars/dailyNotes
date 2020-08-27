@@ -25,3 +25,9 @@ defaultdicy()与dict()  https://www.jianshu.com/p/bbd258f99fd3
 
 [类中的魔法方法](https://www.cnblogs.com/dachenzi/p/8185792.html)
 
+ #### 特列方法
+
+在类中以双下滑线开始和双下滑线结束的属性或方法叫做**特列方法**
+
+
+
