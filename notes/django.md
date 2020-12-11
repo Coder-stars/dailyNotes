@@ -1,8 +1,8 @@
 # Django日常总结
 
-##1 字符串与类名转换两种方法
+## 1 字符串与类名转换两种方法
 
-###Way one:
+### Way one:
 
  from django.util.models_loading  import import_string
 
@@ -19,13 +19,13 @@ ValidationError = import_string('django.core.exceptions.ValidationError')
 
 总结：可以直接把字符串转化为类名
 
-####Way two:
+#### Way two:
 
 使用globals()函数，用法如下：
 
 xxx= globals()[字符串]
 
-就可以吧指定的字符串转化为类
+就可以把指定的字符串转化为类
 
 ![image-20200623161528253](/Users/coder_li/Library/Application Support/typora-user-images/image-20200623161528253.png)
 
