@@ -58,5 +58,41 @@ git stash:
 
 ### commit之后如何撤销
 
-``` 使用git reset --soft head^进行回退操作撤销commit```
+``` 使用git reset --soft head^进行回退操作撤销commit```   
+
+### 如何使用git flow 进行hotfix    
+>  前提是已经安装好git flow并做好配置。[安装指导](https://juejin.cn/post/6844903606013919246)  
+```
+
+1 首先确定你的紧急发布应基于那个分支（默认是mater/main分支,）并切换到对应分支。   
+2 git flow init--该命令会只指导你基于那个分支创建hotfix分支，你的hotfix分支自动合并到哪些分支提示如下    
+
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []      
+3 git flow hotfix start 分支名（不要加hotfix）--新建hotfix分支，成功后会自动切换      
+如下   
+   git:(develop) git flow hotfix start testHotfix
+切换到一个新分支 'hotfix/testHotfix'
+
+Summary of actions:
+- A new branch 'hotfix/testHotfix' was created, based on 'master'
+- You are now on branch 'hotfix/testHotfix'
+
+Follow-up actions:
+- Bump the version number now!
+- Start committing your hot fixes
+- When done, run:
+
+     git flow hotfix finish 'testHotfix' 
+4 在hotfix分支修改代码然后add和commit    
+5 最后执行git flow hotfix finish 分支名 
+``` 
+
 
